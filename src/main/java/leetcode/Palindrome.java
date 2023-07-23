@@ -1,5 +1,8 @@
 package leetcode;
 
+/**
+ * https://leetcode.com/problems/palindrome-number/solutions/
+ * */
 public class Palindrome {
     public static void main(String[] args) {
         boolean palindrome = isPalindrome(2345432);
