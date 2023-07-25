@@ -45,7 +45,7 @@ public class LongestCommonPrefix {
                 throw new IllegalArgumentException("Invalid input: strs elements must have length between 0 and 200.");
             } else if (!areAllLowerCaseLetters(s)) {
                 throw new IllegalArgumentException("Invalid input: strs elements must contain only lowercase English letters" + s);
-            } else if (!s.matches("[a-zA-Z]+")) {
+            } else if (!s.isEmpty() && !s.matches("[a-zA-Z]+")) {
                 throw new IllegalArgumentException("Invalid input: strs elements must contain only Latin letters.");
             }
         }
