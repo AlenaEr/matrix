@@ -25,6 +25,7 @@ public class LongestCommonPrefix {
         String first = strs[0];
         String last = strs[strs.length - 1];
         int idx = 0;
+        stringValidation(strs);
         while (idx < first.length() && idx < last.length()) {
             if (first.charAt(idx) == last.charAt(idx)) {
                 idx++;
@@ -34,4 +35,27 @@ public class LongestCommonPrefix {
         }
         return first.substring(0, idx);
     }
+
+    private static void stringValidation(String[] strs) {
+        if (strs == null || strs.length < 1 || strs.length > 200) {
+            throw new IllegalArgumentException("Invalid input: strs length must be between 1 and 200.");
+        }
+        for (String s : strs) {
+            if (s == null || s.length() < 0 || s.length() > 200) {
+                throw new IllegalArgumentException("Invalid input: strs elements must have length between 0 and 200.");
+            } else if (!areAllLowerCaseLetters(s)) {
+                throw new IllegalArgumentException("Invalid input: strs elements must contain only lowercase English letters" + s);
+            }
+        }
+    }
+
+    private static boolean areAllLowerCaseLetters(String str) {
+        for (char c : str.toCharArray()) {
+            if (!Character.isLowerCase(c)) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
+
