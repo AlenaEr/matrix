@@ -16,7 +16,7 @@ package leetcode;
 public class LongestPalindromicSubstring {
     public static void main(String[] args) {
         LongestPalindromicSubstring l = new LongestPalindromicSubstring();
-        System.out.println(l.longestPalindrome("babad"));
+        System.out.println(l.longestPalindrome("ccc"));
     }
 
     public String longestPalindrome(String s) {
@@ -42,7 +42,7 @@ public class LongestPalindromicSubstring {
         }
 
         for (int length = 3; length <= ln; length++) {
-            for (int i = 0; i < ln - length; i++) {
+            for (int i = 0; i <= ln - length; i++) {
                 int j = i + length - 1;
                 if (dp[i + 1][j - 1] && s.charAt(i) == s.charAt(j)) {
                     dp[i][j] = true;
